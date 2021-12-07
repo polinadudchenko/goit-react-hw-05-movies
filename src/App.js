@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router';
-import './App.css';
+import './App.styled.js';
 
 import { HomePage } from './views/HomePage';
 import { MovieDetailsPage } from './views/MovieDetailsPage';

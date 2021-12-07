@@ -8,7 +8,7 @@ const StyledGallery = styled.ul`
 `;
 
 const GalleryItem = styled.li`
-  width: 320px;
+  width: 280px;
   margin-left: 20px;
   margin-top: 20px;
   overflow: hidden;

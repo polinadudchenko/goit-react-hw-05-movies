@@ -4,11 +4,21 @@ const StyledHeader = styled.header`
   padding: 20px;
 
   text-align: center;
-  background-color: aqua;
+  background-color: #414141;
 `;
 
-const StyledLink = styled.Link`
-  color: rot;
+const NavList = styled.ul`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
-export { StyledHeader, StyledLink };
+const NavItem = styled.li`
+  font-size: 24px;
+  color: #000;
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+`;
+
+export { StyledHeader, NavList, NavItem };

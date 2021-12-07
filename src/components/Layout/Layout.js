@@ -1,12 +1,18 @@
-import { Link, Outlet } from 'react-router-dom';
-import { StyledHeader, StyledLink } from './Layout.styled';
+import { NavLink, Outlet } from 'react-router-dom';
+import { NavItem, NavList, StyledHeader } from './Layout.styled';
 
 export default function Layout() {
   return (
     <>
       <StyledHeader>
-        <StyledLink to="/">Home</StyledLink>
-        <Link to="/movies">Movies</Link>
+        <NavList>
+          <NavItem>
+            <NavLink to="/">Home</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink to="/movies">Movies</NavLink>
+          </NavItem>
+        </NavList>
       </StyledHeader>
       <Outlet />
     </>
