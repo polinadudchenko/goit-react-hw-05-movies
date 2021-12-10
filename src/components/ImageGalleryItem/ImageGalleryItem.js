@@ -5,8 +5,7 @@ export default function ImageGalleryItem({ movie }) {
         src={`https://image.tmdb.org/t/p/w342/${movie.poster_path}`}
         alt={movie.original_title}
       />
-      <h2>{movie.title}</h2>
-      <p>{movie.overview}</p>
+      <h3>{movie.title}</h3>
     </>
   );
 }
