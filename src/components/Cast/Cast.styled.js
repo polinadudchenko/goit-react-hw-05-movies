@@ -19,4 +19,16 @@ const CastTitle = styled.h4``;
 const CastCharacter = styled.p`
   font-weight: 400;
 `;
-export { CastGallery, CastGalleryItem, CastTitle, CastCharacter };
+
+const NoCastMessage = styled.p`
+  text-align: left;
+  font-size: 20px;
+  font-weight: 500;
+`;
+export {
+  CastGallery,
+  CastGalleryItem,
+  CastTitle,
+  CastCharacter,
+  NoCastMessage,
+};

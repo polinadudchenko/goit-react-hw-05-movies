@@ -9,10 +9,11 @@ import {
   CastGalleryItem,
   CastTitle,
   CastCharacter,
+  NoCastMessage,
 } from './Cast.styled';
 
 export default function Cast() {
-  const [cast, setCast] = useState();
+  const [cast, setCast] = useState([]);
   const { movieId } = useParams();
 
   useEffect(() => {
@@ -30,7 +31,7 @@ export default function Cast() {
 
   return (
     <>
-      {cast && (
+      {cast.length ? (
         <CastGallery>
           {cast.map(actor => {
             return (
@@ -49,6 +50,8 @@ export default function Cast() {
             );
           })}
         </CastGallery>
+      ) : (
+        <NoCastMessage>No reviews are found</NoCastMessage>
       )}
       ;
     </>

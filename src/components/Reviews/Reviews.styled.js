@@ -14,7 +14,7 @@ const AuthorName = styled.h4`
 
 const ReviewContent = styled.p``;
 
-const NoReviewsMassage = styled.p`
+const NoReviewsMessage = styled.p`
   text-align: left;
   font-size: 20px;
   font-weight: 500;
@@ -25,5 +25,5 @@ export {
   ReviewGalleryItem,
   AuthorName,
   ReviewContent,
-  NoReviewsMassage,
+  NoReviewsMessage,
 };

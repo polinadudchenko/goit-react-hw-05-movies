@@ -7,7 +7,7 @@ import {
   ReviewGalleryItem,
   AuthorName,
   ReviewContent,
-  NoReviewsMassage,
+  NoReviewsMessage,
 } from './Reviews.styled';
 export default function Reviews() {
   const [reviews, setReviews] = useState([]);
@@ -39,7 +39,7 @@ export default function Reviews() {
           })}
         </ReviewGallery>
       ) : (
-        <NoReviewsMassage>No reviews found</NoReviewsMassage>
+        <NoReviewsMessage>No reviews are found</NoReviewsMessage>
       )}
     </>
   );
