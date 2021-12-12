@@ -9,6 +9,5 @@ export function HomePage() {
   useEffect(() => {
     movieAPI.trendingMovies().then(data => setTrendingMovies(data.results));
   }, []);
-  console.log(trendingMovies);
   return <ImageGallery data={trendingMovies} />;
 }

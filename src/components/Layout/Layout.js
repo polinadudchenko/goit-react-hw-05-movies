@@ -1,5 +1,6 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import { NavItem, NavList, StyledHeader } from './Layout.styled';
+import { ToastContainer } from 'react-toastify';
 
 export default function Layout() {
   return (
@@ -15,6 +16,7 @@ export default function Layout() {
         </NavList>
       </StyledHeader>
       <Outlet />
+      <ToastContainer autoClose={3000} />
     </>
   );
 }

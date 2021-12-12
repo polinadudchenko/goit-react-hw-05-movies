@@ -12,8 +12,11 @@ async function trendingMovies() {
 }
 
 async function searchMovies(query) {
+  if (!query) {
+    return;
+  }
   const response = await fetch(
-    `${BASE_URL}/search/movie?api_key=${API_KEY}&language=en-US&query=${query}&page=1&include_adult=false`,
+    `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${query}&include_adult=false`,
   );
   if (response.ok) {
     return response.json();

@@ -9,7 +9,7 @@ export default function ImageGallery({ data }) {
       <StyledGallery>
         {data.map(movie => {
           return (
-            <Link key={movie.id} to={`movies/${movie.id}`}>
+            <Link key={movie.id} to={`/movies/${movie.id}`}>
               <GalleryItem>
                 <ImageGalleryItem movie={movie} />
               </GalleryItem>

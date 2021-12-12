@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 
 const StyledHeader = styled.header`
   padding: 20px;
+  margin-bottom: 40px;
 
   text-align: center;
   background-color: #414141;
