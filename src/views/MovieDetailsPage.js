@@ -9,7 +9,7 @@ import {
 import { movieAPI } from '../services/movie-api';
 import MovieDetailsItem from '../components/MovieDetailsItem';
 import MoreInfo from '../components/MoreInfo';
-import { Container } from '../App.styled';
+import { Container, Button } from '../App.styled';
 
 export function MovieDetailsPage() {
   const { movieId } = useParams();
@@ -32,7 +32,7 @@ export function MovieDetailsPage() {
     <Container>
       {movie && (
         <>
-          <button onClick={goBack}>Go back</button>
+          <Button onClick={goBack}>Go back</Button>
           <MovieDetailsItem movieDetails={movie} />
         </>
       )}

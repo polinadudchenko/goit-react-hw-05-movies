@@ -30,7 +30,10 @@ export const Container = styled.div`
 
 export const Button = styled.button`
   padding: 10px 32px;
-  background-color: #2196f3;
+  margin-bottom: 15px;
+  display: block;
+  margin-left: auto;
+  background-color: #414141;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   font-weight: bold;

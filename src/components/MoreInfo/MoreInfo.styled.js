@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Link } from 'react-router-dom';
 
 const InfoThumb = styled.div``;
 
@@ -19,4 +20,8 @@ const InfoItem = styled.li`
   }
 `;
 
-export { InfoThumb, GroupTitle, InfoList, InfoItem };
+const InfoLink = styled(Link)`
+  color: #fff;
+`;
+
+export { InfoThumb, GroupTitle, InfoList, InfoItem, InfoLink };
