@@ -42,6 +42,6 @@ export const Button = styled.button`
   letter-spacing: 0.06em;
   color: #ffffff;
   &:hover {
-    background-color: #188ce8;
+    background-color: #f19816;
   }
 `;

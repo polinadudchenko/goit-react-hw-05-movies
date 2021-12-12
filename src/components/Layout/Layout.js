@@ -1,5 +1,10 @@
-import { NavLink, Outlet, useLocation } from 'react-router-dom';
-import { NavItem, NavList, StyledHeader } from './Layout.styled';
+import { Outlet, useLocation } from 'react-router-dom';
+import {
+  NavItem,
+  NavList,
+  StyledHeader,
+  NavigationLink,
+} from './Layout.styled';
 import { ToastContainer } from 'react-toastify';
 
 export default function Layout() {
@@ -8,10 +13,10 @@ export default function Layout() {
       <StyledHeader>
         <NavList>
           <NavItem>
-            <NavLink to="/">Home</NavLink>
+            <NavigationLink to="/">Home</NavigationLink>
           </NavItem>
           <NavItem>
-            <NavLink to="/movies">Movies</NavLink>
+            <NavigationLink to="/movies">Movies</NavigationLink>
           </NavItem>
         </NavList>
       </StyledHeader>

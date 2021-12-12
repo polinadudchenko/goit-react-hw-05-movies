@@ -13,7 +13,6 @@ const InfoList = styled.ul`
 `;
 
 const InfoItem = styled.li`
-  font-size: 55px;
   color: #414141;
   &:not(:last-child) {
     margin-right: 15px;
@@ -21,7 +20,13 @@ const InfoItem = styled.li`
 `;
 
 const InfoLink = styled(Link)`
-  color: #fff;
+  color: #414141;
+  font-size: 20px;
+  font-weight: 600;
+
+  &:hover {
+    color: #f19816;
+  }
 `;
 
 export { InfoThumb, GroupTitle, InfoList, InfoItem, InfoLink };

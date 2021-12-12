@@ -9,14 +9,15 @@ import {
   ReviewContent,
 } from './Reviews.styled';
 export default function Reviews() {
-  const [reviews, setReviews] = useState();
+  const [reviews, setReviews] = useState([]);
   const { movieId } = useParams();
 
   useEffect(() => {
+    console.log(reviews);
     movieAPI
       .movieReview(movieId)
       .then(res => {
-        if (res) {
+        if (res.length !== 0) {
           setReviews(res.results);
         } else {
           throw new Error('Trese are no reviews for this movie');
@@ -26,7 +27,7 @@ export default function Reviews() {
   });
   return (
     <>
-      {reviews && (
+      {reviews.length === 0 ? (
         <ReviewGallery>
           {reviews.map(review => {
             return (
@@ -37,6 +38,8 @@ export default function Reviews() {
             );
           })}
         </ReviewGallery>
+      ) : (
+        <p>No reviews found</p>
       )}
     </>
   );

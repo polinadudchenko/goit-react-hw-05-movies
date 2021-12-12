@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import '../../index.styled';
 import {
   InfoThumb,
@@ -17,7 +16,7 @@ export default function MoreInfo() {
           <InfoLink to="cast">Cast</InfoLink>
         </InfoItem>
         <InfoItem>
-          <Link to="reviews">Review</Link>
+          <InfoLink to="reviews">Review</InfoLink>
         </InfoItem>
       </InfoList>
     </InfoThumb>

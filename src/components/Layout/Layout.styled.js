@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { NavLink } from 'react-router-dom';
 
 const StyledHeader = styled.header`
   padding: 20px;
@@ -22,4 +23,12 @@ const NavItem = styled.li`
   }
 `;
 
-export { StyledHeader, NavList, NavItem };
+const NavigationLink = styled(NavLink)`
+  color: #fff;
+
+  &:hover {
+    color: #f19816;
+  }
+`;
+
+export { StyledHeader, NavList, NavItem, NavigationLink };
