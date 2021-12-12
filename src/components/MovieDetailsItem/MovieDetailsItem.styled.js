@@ -37,6 +37,7 @@ export {
   MovieDetailsThumb,
   ImageThumb,
   ContentThumb,
+  MovieImage,
   MovieTitle,
   GroupTitle,
   TextContent,

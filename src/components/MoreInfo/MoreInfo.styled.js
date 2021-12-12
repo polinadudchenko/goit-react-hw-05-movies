@@ -10,6 +10,7 @@ const GroupTitle = styled.h3`
 const InfoList = styled.ul`
   display: flex;
   justify-content: center;
+  margin-bottom: 15px;
 `;
 
 const InfoItem = styled.li`

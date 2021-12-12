@@ -14,4 +14,16 @@ const AuthorName = styled.h4`
 
 const ReviewContent = styled.p``;
 
-export { ReviewGallery, ReviewGalleryItem, AuthorName, ReviewContent };
+const NoReviewsMassage = styled.p`
+  text-align: left;
+  font-size: 20px;
+  font-weight: 500;
+`;
+
+export {
+  ReviewGallery,
+  ReviewGalleryItem,
+  AuthorName,
+  ReviewContent,
+  NoReviewsMassage,
+};

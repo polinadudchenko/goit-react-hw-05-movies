@@ -1,11 +1,5 @@
 import { useEffect, useState } from 'react';
-import {
-  useParams,
-  Outlet,
-  Link,
-  useLocation,
-  useNavigate,
-} from 'react-router-dom';
+import { useParams, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { movieAPI } from '../services/movie-api';
 import MovieDetailsItem from '../components/MovieDetailsItem';
 import MoreInfo from '../components/MoreInfo';
@@ -15,6 +9,7 @@ export function MovieDetailsPage() {
   const { movieId } = useParams();
   const [movie, setMovie] = useState();
   const location = useLocation();
+  const navigate = useNavigate();
   console.log(location.state);
 
   const goBack = () => console.log(location.state);

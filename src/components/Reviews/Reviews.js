@@ -7,13 +7,13 @@ import {
   ReviewGalleryItem,
   AuthorName,
   ReviewContent,
+  NoReviewsMassage,
 } from './Reviews.styled';
 export default function Reviews() {
   const [reviews, setReviews] = useState([]);
   const { movieId } = useParams();
 
   useEffect(() => {
-    console.log(reviews);
     movieAPI
       .movieReview(movieId)
       .then(res => {
@@ -24,10 +24,10 @@ export default function Reviews() {
         }
       })
       .catch(err => toast.error(err));
-  });
+  }, [movieId]);
   return (
     <>
-      {reviews.length === 0 ? (
+      {reviews.length !== 0 ? (
         <ReviewGallery>
           {reviews.map(review => {
             return (
@@ -39,7 +39,7 @@ export default function Reviews() {
           })}
         </ReviewGallery>
       ) : (
-        <p>No reviews found</p>
+        <NoReviewsMassage>No reviews found</NoReviewsMassage>
       )}
     </>
   );
