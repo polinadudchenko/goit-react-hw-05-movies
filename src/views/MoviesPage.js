@@ -9,27 +9,26 @@ import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
 
 export function MoviesPage() {
-  const [query, setQuery] = useState('');
   const [movies, setMovies] = useState([]);
   let [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
-    let params = { query };
-    setSearchParams(params);
     movieAPI
-      .searchMovies(query)
+      .searchMovies(searchParams.get('query'))
       .then(movies => {
         if (movies) {
           setMovies(movies.results);
         }
-        throw new Error(`There are no results for the query ${query}`);
+        throw new Error(
+          `There are no results for the query ${searchParams.get('query')}`,
+        );
       })
       .catch(err => toast.error(err));
-  }, [query]);
+  }, [searchParams]);
 
   const handleSubmit = query => {
-    setQuery(query);
-
+    let params = { query };
+    setSearchParams(params);
     setMovies([]);
   };
 

@@ -10,9 +10,13 @@ export function MovieDetailsPage() {
   const [movie, setMovie] = useState();
   const location = useLocation();
   const navigate = useNavigate();
-  console.log(location.state);
 
-  const goBack = () => console.log(location.state);
+  const goBack = () =>
+    navigate(
+      location.state?.from?.pathname
+        ? `${location.state?.from?.pathname}${location.state?.from?.search}`
+        : '/',
+    );
 
   useEffect(() => {
     movieAPI
