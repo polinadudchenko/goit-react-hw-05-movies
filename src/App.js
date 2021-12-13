@@ -1,27 +1,43 @@
+import React, { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router';
+import Loader from 'react-loader-spinner';
 import './App.styled.js';
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 
 import { HomePage } from './views/HomePage';
-import { MovieDetailsPage } from './views/MovieDetailsPage';
-import { MoviesPage } from './views/MoviesPage';
-
 import Layout from './components/Layout';
-import Reviews from './components/Reviews';
-import Cast from './components/Cast';
+
+const AsyncMoviesPage = lazy(() => import('./views/MoviesPage'));
+const AsyncMovieDetailsPage = lazy(() => import('./views/MovieDetailsPage'));
+const AsyncCast = lazy(() => import('./components/Cast'));
+const AsyncReviews = lazy(() => import('./components/Reviews'));
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<HomePage />} />
-        <Route path="movies" element={<MoviesPage />} />
-        <Route path="movies/:movieId" element={<MovieDetailsPage />}>
-          <Route path="cast" element={<Cast />} />
-          <Route path="reviews" element={<Reviews />} />
+    <Suspense
+      fallback={
+        <Loader
+          type="TailSpin"
+          color="#f19816"
+          height={100}
+          width={100}
+          timeout={3000} //3 secs
+          style={{ textAlign: 'center', padding: '100px' }}
+        />
+      }
+    >
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="movies" element={<AsyncMoviesPage />} />
+          <Route path="movies/:movieId" element={<AsyncMovieDetailsPage />}>
+            <Route path="cast" element={<AsyncCast />} />
+            <Route path="reviews" element={<AsyncReviews />} />
+          </Route>
+          <Route path="*" element={<HomePage />} />
         </Route>
-        <Route path="*" element={<HomePage />} />
-      </Route>
-    </Routes>
+      </Routes>
+    </Suspense>
   );
 }
 

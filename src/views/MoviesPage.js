@@ -8,7 +8,7 @@ import Searchbar from '../components/Searchbar';
 import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
 
-export function MoviesPage() {
+export default function MoviesPage() {
   const [movies, setMovies] = useState([]);
   let [searchParams, setSearchParams] = useSearchParams();
 

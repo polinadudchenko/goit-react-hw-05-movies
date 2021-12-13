@@ -5,7 +5,7 @@ import MovieDetailsItem from '../components/MovieDetailsItem';
 import MoreInfo from '../components/MoreInfo';
 import { Container, Button } from '../App.styled';
 
-export function MovieDetailsPage() {
+export default function MovieDetailsPage() {
   const { movieId } = useParams();
   const [movie, setMovie] = useState();
   const location = useLocation();
