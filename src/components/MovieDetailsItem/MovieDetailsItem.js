@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import {
   MovieDetailsThumb,
   ImageThumb,
@@ -30,3 +31,19 @@ export default function MovieDetailsItem({ movieDetails }) {
     </MovieDetailsThumb>
   );
 }
+
+MovieDetailsItem.defaultProps = {
+  poster_path:
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZWyg5k6Y2X4OaOfDMPcFaAwL9r_eN34CUXbEgCEjMepep7WMua2z90y_DGL0YobiBjRY&usqp=CAU',
+};
+
+MovieDetailsItem.propTypes = {
+  movieDetails: PropTypes.shape({
+    vote_average: PropTypes.number.isRequired,
+    original_title: PropTypes.string,
+    title: PropTypes.string,
+    poster_path: PropTypes.string,
+    overview: PropTypes.string.isRequired,
+    genres: PropTypes.arrayOf(PropTypes.object),
+  }),
+};

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import { toast } from 'react-toastify';
+import { mapReview } from '../../services/mapper';
 import { movieAPI } from '../../services/movie-api';
 import {
   ReviewGallery,
@@ -18,7 +19,8 @@ export default function Reviews() {
       .movieReview(movieId)
       .then(res => {
         if (res.length !== 0) {
-          setReviews(res.results);
+          const reviewContent = mapReview(res.results);
+          setReviews(reviewContent);
         } else {
           throw new Error('Trese are no reviews for this movie');
         }

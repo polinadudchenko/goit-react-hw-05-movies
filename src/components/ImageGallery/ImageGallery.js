@@ -1,4 +1,5 @@
 import { useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { Container } from '../../App.styled';
 import ImageGalleryItem from '../ImageGalleryItem';
 import { StyledGallery, GalleryItem, GalleryLink } from './ImageGallery.styled';
@@ -25,3 +26,11 @@ export default function ImageGallery({ data }) {
     </Container>
   );
 }
+
+ImageGallery.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+    }),
+  ),
+};

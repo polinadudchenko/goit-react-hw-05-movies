@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { movieAPI } from '../../services/movie-api';
+import { mapCast } from '../../services/mapper';
 import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
 import { useParams } from 'react-router';
@@ -21,7 +22,8 @@ export default function Cast() {
       .movieCast(movieId)
       .then(cast => {
         if (cast) {
-          setCast(cast.cast);
+          const castContent = mapCast(cast.cast);
+          setCast(castContent);
         } else {
           throw new Error('There is no data about cast for this film');
         }

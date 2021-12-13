@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { movieAPI } from '../services/movie-api';
+import { mapMovieDetails } from '../services/mapper';
 import MovieDetailsItem from '../components/MovieDetailsItem';
 import MoreInfo from '../components/MoreInfo';
 import { Container, Button } from '../App.styled';
@@ -22,7 +23,8 @@ export default function MovieDetailsPage() {
     movieAPI
       .movieDetails(movieId)
       .then(movie => {
-        setMovie(movie);
+        const details = mapMovieDetails(movie);
+        setMovie(details);
       })
       .catch(error => alert(error));
   }, [movieId]);
