@@ -1,7 +1,7 @@
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { Container } from '../../App.styled';
 import ImageGalleryItem from '../ImageGalleryItem';
-import { StyledGallery, GalleryItem } from './ImageGallery.styled';
+import { StyledGallery, GalleryItem, GalleryLink } from './ImageGallery.styled';
 
 export default function ImageGallery({ data }) {
   const location = useLocation();
@@ -10,7 +10,7 @@ export default function ImageGallery({ data }) {
       <StyledGallery>
         {data.map(movie => {
           return (
-            <Link
+            <GalleryLink
               key={movie.id}
               to={`/movies/${movie.id}`}
               state={{ from: location }}
@@ -18,7 +18,7 @@ export default function ImageGallery({ data }) {
               <GalleryItem>
                 <ImageGalleryItem movie={movie} />
               </GalleryItem>
-            </Link>
+            </GalleryLink>
           );
         })}
       </StyledGallery>

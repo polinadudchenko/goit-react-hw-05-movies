@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Link } from 'react-router-dom';
 
 const StyledGallery = styled.ul`
   display: flex;
@@ -13,4 +14,15 @@ const GalleryItem = styled.li`
   margin-top: 20px;
   overflow: hidden;
 `;
-export { StyledGallery, GalleryItem };
+
+const GalleryLink = styled(Link)`
+  color: #414141;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 600;
+
+  &:hover {
+    color: #f19816;
+  }
+`;
+export { StyledGallery, GalleryItem, GalleryLink };
