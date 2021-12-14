@@ -9,32 +9,36 @@ import {
 } from './MovieDetailsItem.styled';
 
 export default function MovieDetailsItem({ movieDetails }) {
+  const { poster_path, original_title, title, vote_average, overview, genres } =
+    movieDetails;
   return (
     <MovieDetailsThumb>
       <ImageThumb>
         <img
-          src={`https://image.tmdb.org/t/p/w342/${movieDetails.poster_path}`}
-          alt={movieDetails.original_title}
+          src={
+            poster_path
+              ? `https://image.tmdb.org/t/p/w342/${poster_path}`
+              : 'https://www.movienewsletters.net/photos/000000h1.jpg'
+          }
+          alt={original_title}
         />
       </ImageThumb>
       <ContentThumb>
-        <MovieTitle>{movieDetails.title}</MovieTitle>
+        <MovieTitle>{title}</MovieTitle>
         <GroupTitle>User Score </GroupTitle>
-        <TextContent>{movieDetails.vote_average}</TextContent>
+        <TextContent>{vote_average}</TextContent>
         <GroupTitle>Overview</GroupTitle>
-        <TextContent>{movieDetails.overview}</TextContent>
+        <TextContent>{overview}</TextContent>
         <GroupTitle>Genres</GroupTitle>
-        <TextContent>
-          {movieDetails.genres.map(genre => genre.name + '; ')}
-        </TextContent>
+        <TextContent>{genres.map(genre => genre.name + '; ')}</TextContent>
       </ContentThumb>
     </MovieDetailsThumb>
   );
 }
 
 MovieDetailsItem.defaultProps = {
-  poster_path:
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZWyg5k6Y2X4OaOfDMPcFaAwL9r_eN34CUXbEgCEjMepep7WMua2z90y_DGL0YobiBjRY&usqp=CAU',
+  original_title: 'No title was found',
+  title: 'No title was found',
 };
 
 MovieDetailsItem.propTypes = {

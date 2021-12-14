@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react';
-import { Route, Routes } from 'react-router';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import Loader from 'react-loader-spinner';
 import './App.styled.js';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';

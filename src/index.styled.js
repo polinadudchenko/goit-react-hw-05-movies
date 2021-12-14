@@ -51,4 +51,8 @@ export const GlobalStyles = css`
     padding: 0;
     line-height: 0;
   }
+
+  .active {
+    color: #f19816;
+  }
 `;

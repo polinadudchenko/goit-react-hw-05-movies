@@ -26,7 +26,8 @@ const NavItem = styled.li`
 const NavigationLink = styled(NavLink)`
   color: #fff;
 
-  &:hover {
+  &:hover,
+  &.active {
     color: #f19816;
   }
 `;

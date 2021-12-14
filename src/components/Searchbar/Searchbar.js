@@ -27,23 +27,20 @@ export default function Searchbar({ onSubmit }) {
   };
 
   return (
-    <>
-      <StyledSearchForm onSubmit={handleSubmit}>
-        <StyledSearchBtn type="submit">
-          <StyledSearchBtnLabel>Search</StyledSearchBtnLabel>
-        </StyledSearchBtn>
+    <StyledSearchForm onSubmit={handleSubmit}>
+      <StyledSearchBtn type="submit">
+        <StyledSearchBtnLabel>Search</StyledSearchBtnLabel>
+      </StyledSearchBtn>
 
-        <StyledSearchInput
-          type="text"
-          onChange={handleChange}
-          value={input}
-          autoComplete="off"
-          autoFocus
-          placeholder="Search images and photos"
-        />
-      </StyledSearchForm>
-      ;
-    </>
+      <StyledSearchInput
+        type="text"
+        onChange={handleChange}
+        value={input}
+        autoComplete="off"
+        autoFocus
+        placeholder="Search images and photos"
+      />
+    </StyledSearchForm>
   );
 }
 
