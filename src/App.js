@@ -34,7 +34,7 @@ function App() {
             <Route path="cast" element={<AsyncCast />} />
             <Route path="reviews" element={<AsyncReviews />} />
           </Route>
-          <Route path="*" element={<HomePage />} />
+          <Route path="*" element={<Navigate to={'/'} />} />
         </Route>
       </Routes>
     </Suspense>

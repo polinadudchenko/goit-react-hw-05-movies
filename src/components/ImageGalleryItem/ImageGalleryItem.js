@@ -7,7 +7,6 @@ import {
 
 export default function ImageGalleryItem({ movie }) {
   const { poster_path, original_title, title } = movie;
-  console.log(poster_path);
   return (
     <GalleryItem>
       <GalleryItemImg
