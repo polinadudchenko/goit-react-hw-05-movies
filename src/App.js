@@ -27,7 +27,7 @@ function App() {
       }
     >
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="*" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="movies" element={<AsyncMoviesPage />} />
           <Route path="movies/:movieId" element={<AsyncMovieDetailsPage />}>
